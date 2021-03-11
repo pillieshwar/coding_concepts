@@ -1,0 +1,23 @@
+0/1 Knapsack Problem : 
+1) Top down approach is better then recursion because when using recursion, the stack may be full and it will throw stack overflow error.(even though it may be rare)
+
+
+from typing import List
+
+def knapsack(wt: List[int], val: List[int], w: int, n: int) -> int:
+    dp = [[0 for x in range(w + 1)] for x in range(n + 1)]
+    for i in range(n+1):
+        for j in range(w+1):
+            print("i : ",i, "j :", j, "  wt[i-1]",wt[i-1])
+            if(i==0 or j==0):
+                dp[i][j]=0
+            elif(wt[i-1]<=j):
+                dp[i][j] = max(val[i-1] + dp[i-1][j-wt[i-1]],dp[i-1][j])
+            else:
+                dp[i][j] = dp[i-1][j]
+    return dp[n][w]
+w = 7
+wt = [1,3,4,5]
+val = [1, 4,5,7]
+n = len(val)
+print(knapsack(wt, val,w,n))
