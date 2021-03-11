@@ -1,0 +1,23 @@
+Memoization : Recursive call + storing data in memory
+It has same complexity as of Knapsack top-down.
+
+from typing import List
+
+def knapsack(wt: List[int], val: List[int], w: int, n: int) -> int:
+    if n==0 or w==0:
+        return 0
+    if arr[w][n]!=(-1):
+        return arr[w][n]
+    if wt[n-1]>w:
+        return knapsack(wt,val,w,n-1)
+    else:
+        arr[w][n] = max(val[n-1] + knapsack(wt, val,w-wt[n-1],n-1), knapsack(wt,val,w,n-1))
+        return arr[w][n]
+
+wt = [1,4,5,9]
+val = [2,4,5,7]
+w = 9
+n=len(wt)
+arr = [[-1]*(10)]*10
+print(arr)
+print(knapsack(wt, val,w,n))
