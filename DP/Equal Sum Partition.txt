@@ -1,0 +1,31 @@
+Equal Sum Partition : We find out if the sum of numbers in array is even or odd.
+If the sum is odd, we cannot partition the array into equal subsets. 
+If sum is even we check for sum/2 can be obtained from the array subset. 
+
+from typing import List
+
+def subset(arr: List[int], sum: int, n: int) -> bool:
+    dp = [[0 for x in range(sum + 1)] for x in range(n + 1)]    
+    for i in range(n+1):
+        for j in range(sum+1):
+            if(j==0):
+                dp[i][j] = True
+            elif(i==0):
+                dp[i][j] = False
+            elif(arr[i-1]<=j):
+                dp[i][j] = ((dp[i-1][j-arr[i-1]]) or (dp[i-1][j]))
+            else:
+                dp[i][j] = dp[i-1][j]
+    print(dp[n][sum])
+
+arr = [2,3,7,8,10]
+n=len(arr)
+sum = 0
+for i in arr:
+    sum += i
+print(sum)
+if(sum%2!=0):
+    print(false)
+else:
+    subset(arr,int(sum/2),n)
+
