@@ -1,0 +1,28 @@
+Strings : 
+1) count occurences of each string : counts = collections.Counter(s)
+2) strr.split("delimiter")
+
+Dictonary :
+1) Create dict with initial values 0 : collections.defaultdict(int)
+2) Dict condition check for 0 or not : 
+	for i in arr:
+            dic[i] = dic.get(i, 0) + 1
+        
+Heap :
+1) from collecctioins import Counter
+	count = Counter(str/list)
+	count = collections.Counter(nums).items()
+
+2) Finding n largest ( heapq.nlargest(no.of.elements(n), count.keys(), key = count.get)
+
+3) Sort items using priority queue : d = [ -1*n for _,n in dic.items() ]  
+
+Greedy : 
+1) max_neg = float('-inf') #infinite declaration
+    min_pos = float('inf')
+	
+	
+	
+Sorting : 
+1) sorted(list, reverse=True) (Descending order)
+2) sorted(2d_list, key=itemgetter(1), reverse = True ) (sorting 2d array or list)
