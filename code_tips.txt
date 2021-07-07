@@ -26,3 +26,8 @@ Greedy :
 Sorting : 
 1) sorted(list, reverse=True) (Descending order)
 2) sorted(2d_list, key=itemgetter(1), reverse = True ) (sorting 2d array or list)
+
+
+Decimal_Binary : 
+1) Binary to decimal : int(n,2)
+2) Decimal to Binary : bin(n).replace("0b","")
