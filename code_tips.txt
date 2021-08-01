@@ -4,10 +4,14 @@ Strings :
 
 Dictonary :
 1) Create dict with initial values 0 : collections.defaultdict(int)
-2) Dict condition check for 0 or not : 
+2) dic = defaultdict(lambda: []) -------- dic = defaultdict(lambda: 0)
+3) Dict condition check for 0 or not : 
 	for i in arr:
             dic[i] = dic.get(i, 0) + 1
-        
+            
+4) return [[k,sum(dic[k])//5] for k in sorted(dic)]
+
+
 Heap :
 1) from collecctioins import Counter
 	count = Counter(str/list)
